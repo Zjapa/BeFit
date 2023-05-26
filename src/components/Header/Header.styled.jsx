@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHeaderContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: center;
@@ -11,38 +11,20 @@ export const StyledHeaderContainer = styled.div`
   z-index: 2;
   top: 0;
   height: 80px;
+  box-shadow: 0px 0.5px 2px ${({ theme: { colors } }) => colors.buttonSecondary};
 `;
 
 export const StyledHeaderWrapper = styled.div`
-  max-width: 1440px;
+  max-width: 1280px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1280px) {
+    padding: 0px 70px;
+  }
 `;
-
-export const StyledHeader = styled.div`
-  background-color: ${({ theme }) => theme.colors.background};
-  padding: 20px;
-`;
-
-export const StyledLogo = styled.div``;
-
-export const StyledNav = styled.nav`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const StyledList = styled.nav`
-  /* font-family: ${({ theme }) => theme.fonts.montserratRegular}; */
-  list-style: none;
-  display: flex;
-`;
-export const StyledListItem = styled.h4`
-  font-size: 18px;
-  text-transform: uppercase;
-  /* font-family: ${({ theme }) => theme.fonts.montserratRegular}; */
+export const Logo = styled.div`
+  height: 50px;
 `;

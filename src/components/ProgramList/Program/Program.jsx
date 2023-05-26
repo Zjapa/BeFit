@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import { useContext } from 'react';
-import { StyledProgram, StyledProgramContent, StyledProgramDesc, StyledProgramName } from './Program.styled';
+import { StyledProgram, StyledProgramContent } from './Program.styled';
+import Heading from '../../Heading/Heading';
 
 const Program = ({ program }) => {
   const { name, desc, Icon } = program;
@@ -13,12 +14,12 @@ const Program = ({ program }) => {
     <StyledProgram>
       <Icon
         fill={green}
-        style={{ minHeight: '30px', minWidth: '40px', marginTop: '10px', marginRight: '10px' }}
+        style={{ minHeight: '30px', minWidth: '40px', marginTop: '5px', marginRight: '10px' }}
         // preserveAspectRatio="none"
       />
       <StyledProgramContent>
-        <StyledProgramName>{name}</StyledProgramName>
-        <StyledProgramDesc>{desc}</StyledProgramDesc>
+        <Heading tag="h2" text={name} margins={{ mb: '5px' }} />
+        <Heading tag="p" text={desc} />
       </StyledProgramContent>
     </StyledProgram>
   );

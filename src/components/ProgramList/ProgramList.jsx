@@ -1,6 +1,6 @@
 import { programs } from '../../consts/consts';
 import Heading from '../Heading/Heading';
-import Program from '../Program/Program';
+import Program from './Program/Program';
 import { EXPLORE, PROGRAM } from './ProgramList.const';
 import {
   StyledProgramList,

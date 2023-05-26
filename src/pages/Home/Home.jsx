@@ -1,15 +1,26 @@
+import { useEffect } from 'react';
+import ClientComments from '../../components/ClientComments/ClientComments';
 import FreeTraining from '../../components/FreeTraining/FreeTraining';
+import PlanList from '../../components/PlanList/PlanList';
 import ProgramList from '../../components/ProgramList/ProgramList';
-import { StyledContainer, StyledHeroContainer } from './Home.styled';
+import TrainingDiscount from '../../components/TrainingDiscount/TrainingDiscount';
+import { MarginContainer } from '../../styles/commonStyles.styled';
+import HeroSection from '../../components/HeroSection/HeroSection';
 // import heroImg from '../../assets/images/bg.jpg';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <StyledContainer>
-      <StyledHeroContainer></StyledHeroContainer>
+    <MarginContainer>
+      <HeroSection />
       <ProgramList />
       <FreeTraining />
-    </StyledContainer>
+      <PlanList />
+      <TrainingDiscount />
+      <ClientComments />
+    </MarginContainer>
   );
 };
 

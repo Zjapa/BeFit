@@ -1,9 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
-import montserratBlack from '../assets/fonts/Montserrat-Black.ttf';
-import montserratBold from '../assets/fonts/Montserrat-Bold.ttf';
-import montserratRegular from '../assets/fonts/Montserrat-Regular.ttf';
-import oswaldRegular from '../assets/fonts/Oswald-Regular.ttf';
-import oswaldBold from '../assets/fonts/Oswald-Bold.ttf';
+import montserratBlack from '../assets/fonts/Montserrat-Black.woff';
+import montserratBold from '../assets/fonts/Montserrat-Bold.woff';
+import montserratRegular from '../assets/fonts/Montserrat-Regular.woff';
+import oswaldRegular from '../assets/fonts/Oswald-Regular.woff';
+import oswaldBold from '../assets/fonts/Oswald-Bold.woff';
+import RobotoBold from '../assets/fonts/Roboto-Bold.ttf';
+import RobotoBoldItalic from '../assets/fonts/Roboto-BoldItalic.ttf';
+import RobotoRegular from '../assets/fonts/Roboto-Regular.ttf';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -12,31 +15,37 @@ const GlobalStyle = createGlobalStyle`
         box-sizing:border-box;
     }
     body{
-        font-family: Oswald-Regular;
-        /* background-color: #101D1B; */
+        background-color: #101D1B;
+        font-family: Roboto-Regular;
     }
 
     h1{
         font-size: 2.5rem;
-        letter-spacing: 2px;
+      
     }
 
     h2{
         font-size: 2rem;
-        letter-spacing: 2px;
+       
     }
     h3{
         font-size: 1.5rem;
-        letter-spacing: 2px;
+      
 
     }   
     
     h4{
         font-size: 1rem;
-        letter-spacing: 2px;
+    
     }
 
-   
+
+    h1,h2,h3,h4{
+        font-family: Roboto-Bold;
+    }
+
+
+
 
     @font-face {
         font-family: 'Montserrat-Black' ;
@@ -59,6 +68,18 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Oswald-Bold' ;
         src: url(${oswaldBold}) format(truetype);
+    }
+    @font-face {
+        font-family: 'Roboto-Bold' ;
+        src: url(${RobotoBold}) format(truetype);
+    }
+    @font-face {
+        font-family: 'Roboto-BoldItalic' ;
+        src: url(${RobotoBoldItalic}) format(truetype);
+    }
+    @font-face {
+        font-family: 'Roboto-Regular' ;
+        src: url(${RobotoRegular}) format(truetype);
     }
 
 `;

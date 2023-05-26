@@ -1,34 +1,16 @@
-import {
-  StyledHeader,
-  StyledHeaderContainer,
-  StyledHeaderWrapper,
-  StyledList,
-  StyledListItem,
-  StyledLogo,
-  StyledNav,
-} from './Header.styled';
+import Heading from '../Heading/Heading';
+import Navbar from '../Navbar/Navbar';
+import { Logo, StyledHeaderContainer, StyledHeaderWrapper } from './Header.styled';
 
 const Header = () => {
   return (
     <StyledHeaderContainer>
-      <StyledHeader>
-        <StyledHeaderWrapper>
-          <StyledNav>
-            <StyledLogo>
-              <h1>BeFit</h1>
-            </StyledLogo>
-            <StyledList>
-              <StyledListItem>pera</StyledListItem>
-              <StyledListItem>pera</StyledListItem>
-              <StyledListItem>pera</StyledListItem>
-              <StyledListItem>pera</StyledListItem>
-              <StyledListItem>pera</StyledListItem>
-              <StyledListItem>pera</StyledListItem>
-              <StyledListItem>pera</StyledListItem>
-            </StyledList>
-          </StyledNav>
-        </StyledHeaderWrapper>
-      </StyledHeader>
+      <StyledHeaderWrapper>
+        <Logo>
+          <Heading tag="h1" text="BE" coloredText="FIT" />
+        </Logo>
+        <Navbar />
+      </StyledHeaderWrapper>
     </StyledHeaderContainer>
   );
 };
