@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import Heading from '../Heading/Heading';
@@ -8,9 +9,13 @@ import {
   StyledFreeTrainingWrapper,
   StyledFTContent,
   StyledFTDesc,
-  StyledFTimageContainer,
+  StyledFTModel,
 } from './FreeTraining.styled';
 import PropTypes from 'prop-types';
+
+import { Canvas } from '@react-three/fiber';
+import { ContactShadows, Environment } from '@react-three/drei';
+import Shoe from '../Shoe/Shoe';
 
 const FreeTraining = ({ reverse }) => {
   const navigate = useNavigate();
@@ -36,7 +41,17 @@ const FreeTraining = ({ reverse }) => {
             </Button>
           </ButtonWrapper>
         </StyledFTContent>
-        <StyledFTimageContainer></StyledFTimageContainer>
+        <StyledFTModel>
+          <Canvas eventPrefix="client" camera={{ position: [0, 0, 4], fov: 40, zoom: 1 }}>
+            <ambientLight intensity={0.7} />
+            <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, -5]} castShadow />
+            <directionalLight position={[3, 2, 2]} color="#bfff9c" />
+            <Environment preset="city" blur={1} />
+            <ContactShadows resolution={512} position={[0, -0.8, 0]} opacity={1} scale={10} blur={2} far={0.8} />
+
+            <Shoe rotation={[0.3, Math.PI / 1.6, 0]} />
+          </Canvas>
+        </StyledFTModel>
       </StyledFreeTrainingWrapper>
     </StyledFreeTrainingContainer>
   );

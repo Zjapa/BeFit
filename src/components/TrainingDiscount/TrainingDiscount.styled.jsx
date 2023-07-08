@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const StyledTrainingDiscountContainer = styled.section`
   position: relative;
-  background: #39665e;
-  background: radial-gradient(circle, #39665e 33%, rgba(53, 87, 82, 1) 100%);
+  /* background: #39665e; */
+  background: radial-gradient(circle, #0d161599 5%, #39665ea2 100%), url(${({ bg }) => bg});
   padding: 150px 70px;
 
   @media (max-width: 1025px) {
@@ -21,15 +21,14 @@ export const StyledTrainingDiscountWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `;
 export const StyledTrainingDiscountContent = styled.div`
-  width: 100%;
-  justify-self: center;
-  @media (min-width: 1025px) {
-    width: 50%;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StyledTrainingDiscountDesc = styled.div`
@@ -40,6 +39,7 @@ export const ButtonWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  width: 100%;
 
   @media (max-width: 1025px) {
     gap: 30px;

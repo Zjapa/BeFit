@@ -1,15 +1,13 @@
+/* eslint-disable react/no-unknown-property */
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import Heading from '../Heading/Heading';
 import { TERETANI, POGLEDAJTE_PONUDU, DOSTIGNITE, UPLATITE_UNAPRED, POPUST33 } from './TrainingDiscount.const';
+import FreeTrainingImg from '../../assets/images/FreeTrainingBG2.jpg';
 import {
-  ButtonWrapper,
   StyledTrainingDiscountContainer,
   StyledTrainingDiscountWrapper,
   StyledTrainingDiscountContent,
-  StyledTrainingDiscountDesc,
-  StyledTrainingDiscountimageContainer,
-  HLine,
 } from './TrainingDiscount.styled';
 import PropTypes from 'prop-types';
 
@@ -20,23 +18,17 @@ const TrainingDiscount = () => {
     navigate(path);
   };
   return (
-    <StyledTrainingDiscountContainer>
+    <StyledTrainingDiscountContainer bg={FreeTrainingImg}>
       <StyledTrainingDiscountWrapper>
-        <StyledTrainingDiscountimageContainer></StyledTrainingDiscountimageContainer>
         <StyledTrainingDiscountContent>
-          <Heading tag="h1" text={DOSTIGNITE} coloredText={TERETANI} />
+          <Heading tag="h1" text={DOSTIGNITE} coloredText={TERETANI} margins={{ mb: '40px' }} />
 
-          <StyledTrainingDiscountDesc>
-            <Heading tag="p" text={UPLATITE_UNAPRED} lineHeight="30px" margins={{ mb: '20px' }} />
-          </StyledTrainingDiscountDesc>
+          <Heading tag="p" text={UPLATITE_UNAPRED} lineHeight="30px" margins={{ mb: '40px' }} />
+          <Heading tag="h4" coloredText={POPUST33} margins={{ mb: '40px' }} />
 
-          <ButtonWrapper>
-            <Heading tag="h4" coloredText={POPUST33} />
-            <HLine />
-            <Button variant="secondary" onClick={() => navigateTo('/cenovnik')}>
-              {POGLEDAJTE_PONUDU}
-            </Button>
-          </ButtonWrapper>
+          <Button variant="primaryInvert" width="40%" onClick={() => navigateTo('/cenovnik')}>
+            {POGLEDAJTE_PONUDU}
+          </Button>
         </StyledTrainingDiscountContent>
       </StyledTrainingDiscountWrapper>
     </StyledTrainingDiscountContainer>

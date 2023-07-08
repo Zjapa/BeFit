@@ -10,9 +10,8 @@ import {
   HeroSectionStyled,
 } from './HeroSection.styled';
 import { Canvas } from '@react-three/fiber';
-import { Environment, OrbitControls } from '@react-three/drei';
+import { ContactShadows, Environment } from '@react-three/drei';
 import Weight from '../Weight/Weight';
-import BackLight from '../Weight/BackLight';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -25,14 +24,13 @@ const HeroSection = () => {
       <HeroContainer>
         <ModelSection>
           <Canvas shadows gl={{ preserveDrawingBuffer: true }}>
-            <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={5} maxPolarAngle={Math.PI / 2} />
+            {/* <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} /> */}
             <ambientLight intensity={1.2} />
             <Environment preset="city" />
-            <directionalLight position={[3, 2, 2]} color="#bfff9c" />
-            <group>
-              <BackLight />
-              <Weight position={[0, 0, 0]} scale={1.4} rotation={[0, -5, 0]} />
-            </group>
+            <directionalLight position={[3, 10, 2]} color="#bfff9c" />
+            <ContactShadows position={[0, -2, 0]} blur={1} resolution={512} scale={20} opacity={0.5} />
+
+            <Weight position={[0, 0, 0]} scale={1.4} rotation={[0, -5, 0]} />
           </Canvas>
         </ModelSection>
         <TextContent>
