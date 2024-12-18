@@ -5,6 +5,7 @@ import { useRef } from 'react';
 
 const Weight = (props) => {
   const weightRef = useRef();
+  useGLTF.preload('optimized-50-kg_weight.glb');
   const { nodes, materials } = useGLTF('50-kg_weight.glb');
 
   useFrame((state, delta) => {
